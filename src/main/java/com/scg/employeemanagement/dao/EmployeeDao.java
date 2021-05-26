@@ -14,7 +14,12 @@ public interface EmployeeDao {
 
 	EmployeeVO updateEmployee(EmployeeVO employeeVO);
 
-	EmployeeVO  getEmployeeById(final int id);
+	EmployeeVO getEmployeeById(final int id);
 
+	List<String> getDepartmentNameByEmployeeId(final int id);
+
+	List<String> getEmployeeAndDepartmentName();
+	
+	List<String> getAccountDetailsByEmployeeId(int id);
 
 }
