@@ -24,7 +24,8 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
-
+	
+	
 	@PostMapping
 	public ResponseEntity<EmployeeVO> addEmployee(@RequestBody final EmployeeVO employeeVO) {
 
@@ -41,6 +42,7 @@ public class EmployeeController {
 
 		return new ResponseEntity<>(employeeService.getEmployees(), HttpStatus.OK);
 	}
+	
 
 	@DeleteMapping("{id}")
 	public void deleteEmployee(@PathVariable final int id) {
@@ -56,6 +58,25 @@ public class EmployeeController {
 	public ResponseEntity<EmployeeVO> getEmployeeById(@PathVariable final int id) {
 
 		return new ResponseEntity<>(employeeService.getEmployeeById(id), HttpStatus.OK);
+
+	}
+	@GetMapping("deptby/{id}")
+	public List<String> getDepartmentNameByEmployeeId(@PathVariable final int id) {
+		
+		return employeeService.getDepartmentNameByEmployeeId(id);
+
+	}
+		
+	@GetMapping("account/{id}")
+	public List<String> getAccountDetailsByEmployeeId(@PathVariable final int id) {
+		
+		return employeeService.getAccountDetailsByEmployeeId(id);
+
+	}
+	
+	@GetMapping("list/dept")
+	public  List<String> getEmployeeAndDepartmentName() {
+       return employeeService.getEmployeeAndDepartmentName();
 
 	}
 
