@@ -48,6 +48,26 @@ public class EmployeeServiceimpl implements EmployeeService {
 		return employeeDao.getEmployeeById(id);
 	}
 
+	
+
+	@Override
+	public List<String> getDepartmentNameByEmployeeId(int id) {
+		
+		return employeeDao.getDepartmentNameByEmployeeId(id);
+	}
+
+	@Override
+	public List<String> getEmployeeAndDepartmentName() {
+		
+		return employeeDao.getEmployeeAndDepartmentName();
+	}
+
+	@Override
+	public List<String> getAccountDetailsByEmployeeId(int id) {
+		// TODO Auto-generated method stub
+		return employeeDao.getAccountDetailsByEmployeeId(id);
+	}
+
 		
 	
 }
