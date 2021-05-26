@@ -2,6 +2,7 @@ package com.scg.employeemanagement.service;
 
 import java.util.List;
 
+
 import com.scg.employeemanagement.vo.EmployeeVO;
 
 public interface EmployeeService {
@@ -15,5 +16,11 @@ public interface EmployeeService {
 
 	EmployeeVO getEmployeeById(final int id);
 
+	
+	List<String> getDepartmentNameByEmployeeId(final int id);
+	
+	List<String> getEmployeeAndDepartmentName();
+	
+	List<String> getAccountDetailsByEmployeeId(final int id);
  
 }
